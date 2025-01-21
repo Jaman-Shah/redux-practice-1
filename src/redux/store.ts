@@ -2,12 +2,16 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import counterReducer from "@/redux/features/counter/counterSlice";
 import colorPickerReducer from "@/redux/features/colorPicker/colorPickerSlice";
+import { baseApi } from "./api/baseApi";
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
     colorPicker: colorPickerReducer,
+    [baseApi.reducerPath]: baseApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export default store;

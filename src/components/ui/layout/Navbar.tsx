@@ -13,6 +13,9 @@ const Navbar = () => {
       <Link className="border p-4" to={"/color-picker"}>
         ColorPicker
       </Link>
+      <Link className="border p-4" to={"/rtk-page"}>
+        RTK Page
+      </Link>
       <Link className="border p-4" to={"/expenses"}>
         Expense Manage
       </Link>
